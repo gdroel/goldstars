@@ -1,24 +1,22 @@
 @extends('layout')
 @section('content')
 <div class="jumbotron">
-	<h1>{{ $user->name }}</h1>
+	<h1 class="movedown">{{ $user->name }}</h1>
 	<p>{{ $user->organization }}</p>
 </div>
-<h2>Students</h2>
-<div class="col-md-6">
+<div class="container">
+<div class="col-md-8">
+	<h2>Students</h2>
+	<h3><a href="{{ action('HomeController@showCreate') }}">Add +</a></h3>
+	<hr>
 	<table class="table">
 	<tr>
 		<th>Name</th>
 		<th>Stars</th>
-	@foreach($user->students as $student)
-		@if(Auth::check())
-		@if(Auth::user()->id==$student->user_id)
-		<th>Add</th>
-		@endif
-		@endif
+		@foreach($user->students as $student)
 	</tr>
 	<tr>
-		<td>{{ $student->name }}</td>
+		<td><p>{{ $student->name }}</p></td>
 	<td>
 	<?php $stars = $student->stars; ?>
 
@@ -44,4 +42,5 @@
 	@endforeach
 	</table>
 </div>
+</div><!--Container-->
 @stop

@@ -3,3 +3,70 @@
 	font-size: 30px;
 	color: yellow;
 }
+
+#bg1{
+
+	/*background-image: url('../images/starblur.png');*/
+	background-color: gray;
+	height: 350px;
+	width: 100%;
+	background-size: cover;
+}
+.jumbotron{
+	background-color: gray;
+}
+.jumbotron>p{
+
+	color: white;
+}
+p{
+	font-family: 'Raleway';
+}
+.centered{
+
+	text-align: center;
+}
+
+.movedown{
+
+	margin-top: 100px;
+}
+.info{
+
+	border-top: 2px solid yellow;
+}
+
+.navbar-fixed-top{
+
+	background-color: white;
+	padding: 10px;
+}
+
+h1{
+
+	font-family: 'Bitter';
+}
+
+h2{
+
+	font-family: 'Bitter';
+}
+
+.jumbotron h1{
+
+	color: white;
+}
+
+h3{
+
+	font-family: 'Raleway';
+}
+
+h4{
+
+	font-family: 'Raleway';
+}
+.navbar-fixed-top .btn-info{
+	background: none;
+	border: 1px solid yellow;
+}

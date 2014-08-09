@@ -4,11 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap 101 Template</title>
+    <title>Give me a Gold Star</title>
 
     <!-- Bootstrap -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../css/style.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -17,7 +19,7 @@
     <![endif]-->
   </head>
   <body>
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -32,12 +34,12 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav pull-right">
         @if(Auth::check())
         <li><a href="{{ action('HomeController@doLogout') }}">Logout</a></li>
-        <li><a href="{{ action('HomeController@showCreate') }}">New Person</a></li>
+        <li><a href="{{ action('HomeController@showCreate') }}">+</a></li>
         @else
-        <li><a href="{{ action('HomeController@showRegister') }}">Register</a></li>
+        <li><a class="btn btn-info" href="{{ action('HomeController@showRegister') }}">I'm a Leader</a></li>
         <li><a href="{{ action('HomeController@showLogin') }}">Login</a></li>
         @endif
       </ul>
@@ -51,10 +53,7 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-  	<div class="container">
-    @yield('content')
-	</div>
- 	
+    @yield('content') 	
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </body>
