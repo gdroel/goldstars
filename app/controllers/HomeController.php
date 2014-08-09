@@ -60,7 +60,7 @@ class HomeController extends BaseController {
 
 			echo 'u cant do dat.';
 		}
-		return Redirect::action('HomeController@index');
+		return Redirect::back();
 	}
 
 	public function showRegister(){
