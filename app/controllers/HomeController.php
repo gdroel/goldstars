@@ -41,9 +41,7 @@ class HomeController extends BaseController {
 		return Redirect::action('HomeController@index');
 	}
 
-	public function show(User $user){
-
-		
+	public function show(User $user){		
 
 		return View::make('show',compact('user'));
 	}
