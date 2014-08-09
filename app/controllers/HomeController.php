@@ -38,7 +38,7 @@ class HomeController extends BaseController {
 
 		$student->save();
 
-		return Redirect::action('HomeController@index');
+		return Redirect::back();
 	}
 
 	public function show(User $user){		
@@ -113,7 +113,7 @@ class HomeController extends BaseController {
 
 			if (Auth::attempt($userdata)) {
 
-				return Redirect::action('HomeController@index');
+				return Redirect::back();
 
 			} else {	 	
 
@@ -123,6 +123,19 @@ class HomeController extends BaseController {
 			}
 
 		}
+	}
+
+	public function doSearch(){
+
+		$query=Input::get('query');
+
+		$students = Student::whereRaw(
+		"MATCH(name) AGAINST(? IN BOOLEAN MODE)",
+        array($query)
+    	)->get();
+
+    	return View::make('results', compact('students'));
+
 	}
 
 	public function doLogout(){

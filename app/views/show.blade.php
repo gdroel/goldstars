@@ -7,12 +7,28 @@
 <div class="container">
 <div class="col-md-8">
 	<h2>Students</h2>
-	<h3><a href="{{ action('HomeController@showCreate') }}">Add +</a></h3>
+	<h3 id="addbutton"><a>Add +</a></h3>
+		{{ Form::open(array('action'=>'HomeController@doCreate','id'=>"addform")) }}
+		<div class="form-inline">
+		{{ Form::text('name',null,array('class'=>'form-control','placeholder'=>'Name'))}}
+		{{ Form::hidden('user_id', Auth::user()->id)}}
+		{{ Form::submit('Add',array('class'=>'btn btn-success')) }}
+		</div>
+		{{ Form::close() }}
 	<hr>
 	<table class="table">
 	<tr>
 		<th>Name</th>
 		<th>Stars</th>
+		<th>
+		@if(Auth::check())
+			@if(Auth::user()->id==$user->id)
+
+				Add
+
+			@endif
+		@endif
+		</th>
 		@foreach($user->students as $student)
 	</tr>
 	<tr>
@@ -43,4 +59,15 @@
 	</table>
 </div>
 </div><!--Container-->
+<script>
+$(document).ready(function(){
+
+	$("#addform").hide();
+	$("#addbutton").click(function(){
+
+		$("#addform").show();
+	});
+	
+});
+</script>
 @stop

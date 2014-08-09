@@ -29,3 +29,5 @@ Route::post('login', 'HomeController@doLogin');
 Route::get('show/{user}', 'HomeController@show');
 
 Route::get('logout', 'HomeController@doLogout');
+
+Route::post('search', 'HomeController@doSearch');

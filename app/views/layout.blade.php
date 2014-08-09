@@ -17,6 +17,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   </head>
   <body>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -36,6 +37,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav pull-right">
         @if(Auth::check())
+        <li><a class="btn btn-info" href="{{ action('HomeController@show', Auth::user()->id) }}">Students</a></li>
         <li><a href="{{ action('HomeController@doLogout') }}">Logout</a></li>
         <li><a href="{{ action('HomeController@showCreate') }}">+</a></li>
         @else
@@ -43,12 +45,13 @@
         <li><a href="{{ action('HomeController@showLogin') }}">Login</a></li>
         @endif
       </ul>
-      <form class="navbar-form navbar-left" role="search">
+
+      {{ Form::open(array('action'=>'HomeController@doSearch','class'=>'navbar-form navbar-left'))}}
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+          {{ Form::text('query', null, array('class'=>'form-control', 'placeholder'=>'Search Students'))}}
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
+      {{ Form::submit('Search', array('class'=>"btn btn-default")) }}
+      {{ Form::close() }}
 
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -56,5 +59,8 @@
     @yield('content') 	
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <div class="col-md-12" id="footer">
+      <p><a class="white" href="http://gaberoeloffs.com">&copy 2014 Gabe Roeloffs</a></p>
+    </div>
   </body>
 </html>

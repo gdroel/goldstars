@@ -8,7 +8,7 @@
 
 	/*background-image: url('../images/starblur.png');*/
 	background-color: gray;
-	height: 350px;
+	height: 330px;
 	width: 100%;
 	background-size: cover;
 }
@@ -25,6 +25,25 @@ p{
 .centered{
 
 	text-align: center;
+}
+
+.submit{
+
+	margin: 0 auto;
+	width: 100px;
+}
+
+#addbutton{
+
+	cursor:pointer;
+}
+
+#login{
+
+	background-color: #E8E8E8;
+	padding: 20px;
+	-moz-border-radius: 15px;
+border-radius: 15px;
 }
 
 .movedown{
@@ -69,4 +88,16 @@ h4{
 .navbar-fixed-top .btn-info{
 	background: none;
 	border: 1px solid yellow;
+}
+
+.white{
+
+	color: white;
+}
+
+#footer{
+
+	margin-top: 100px;
+	background-color: gray;
+	padding: 15px;
 }
