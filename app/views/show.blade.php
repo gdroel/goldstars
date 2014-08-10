@@ -7,6 +7,7 @@
 <div class="container">
 <div class="col-md-8">
 	<h2>Students</h2>
+	@if(Auth::check())
 	<h3 id="addbutton"><a>Add +</a></h3>
 		{{ Form::open(array('action'=>'HomeController@doCreate','id'=>"addform")) }}
 		<div class="form-inline">
@@ -15,6 +16,7 @@
 		{{ Form::submit('Add',array('class'=>'btn btn-success')) }}
 		</div>
 		{{ Form::close() }}
+	@endif
 	<hr>
 	<table class="table">
 	<tr>

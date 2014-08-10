@@ -2,7 +2,7 @@
 @section('content')
 <div id="bg1">
 	<div class="jumbotron">
-		<h1 class="centered movedown">All that Glitters is Gold.</h1>
+		<h1 class="centered movedownmore">All that Glitters is Gold.</h1>
 	</div>
 </div>
 <div class="container">

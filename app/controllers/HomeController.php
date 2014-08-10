@@ -75,7 +75,7 @@ class HomeController extends BaseController {
 			'username' => 'alpha_num|unique:users|min:2|max:15|required',
 			'password' => 'min:6|max:20|required|' ,
 			'email' => 'email|unique:users|required',
-			'organization' =>'alpha_num|min:2|max:25|required',
+			'organization' =>'alpha|min:2|max:25|required',
 			
 
 		);

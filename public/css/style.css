@@ -7,13 +7,13 @@
 #bg1{
 
 	/*background-image: url('../images/starblur.png');*/
-	background-color: gray;
+	background-image: url('../images/starring.png');
+	background-repeat: repeat;
 	height: 330px;
 	width: 100%;
-	background-size: cover;
 }
 .jumbotron{
-	background-color: gray;
+	background-image: url('../images/starring.png');
 }
 .jumbotron>p{
 
@@ -26,6 +26,7 @@ p>ol>li{
 
 	font-family: 'Raleway';
 }
+
 .centered{
 
 	text-align: center;
@@ -53,6 +54,10 @@ border-radius: 15px;
 .movedown{
 
 	margin-top: 100px;
+}
+.movedownmore{
+
+	margin-top: 120px;	
 }
 .info{
 

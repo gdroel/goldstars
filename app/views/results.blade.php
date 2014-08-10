@@ -1,8 +1,8 @@
 @extends('layout')
 
 @section('content')
-<div class="jumbotron movedown">
-	<h1>Search Results</h1>
+<div class="jumbotron">
+	<h1 class="movedown">Search Results</h1>
 </div>
 
 <div class="container">
