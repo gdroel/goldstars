@@ -32,7 +32,7 @@ class HomeController extends BaseController {
 
 		$student = new Student();
 
-		$student->name=Input::get('name');
+		$student->name=Str::title(Input::get('name'));
 		$student->user_id=Input::get('user_id');
 		$student->stars=0;
 
@@ -56,12 +56,8 @@ class HomeController extends BaseController {
 			Student::addStar($id);
 
 		}
-		else{
-
-			echo 'u cant do dat.';
-		}
-		return Redirect::back();
-
+		return Response::json(compact($user_id));
+		
 	}
 
 	public function showRegister(){
@@ -71,17 +67,39 @@ class HomeController extends BaseController {
 
 	public function doRegister(){
 
+		$data = Input::all();
+
+		$rules = array(
+
+			'name'=>'required|min:3|max:30',
+			'username' => 'alpha_num|unique:users|min:2|max:15|required',
+			'password' => 'min:6|max:20|required|' ,
+			'email' => 'email|unique:users|required',
+			'organization' =>'alpha_num|min:2|max:25|required',
+			
+
+		);
+
+		$validator = Validator::make($data, $rules);
+
+		if($validator->passes()){
 		$user = new User();
 
-		$user->name=		Input::get('name');
-		$user->organization=Input::get('organization');
+		$user->name=		Str::title(Input::get('name'));
+		$user->organization=Str::title(Input::get('organization'));
 		$user->username=	Input::get('username');
 		$user->email=		Input::get('email');
 		$user->password=	Hash::make(Input::get('password'));
 
 		$user->save();
 
-		return Redirect::action('HomeController@index');
+		return Redirect::action('HomeController@showLogin');
+
+		}
+		else{
+
+			return Redirect::action('HomeController@showRegister')->withErrors($validator);
+		}
 	}
 
 	public function showLogin(){

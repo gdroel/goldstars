@@ -5,6 +5,9 @@
 
 	<div class="col-md-4 col-md-offset-4 text-center" id="login">
 	<h2>Register as a Leader</h2>
+	@foreach($errors->all() as $message)
+        <div class='alert alert-danger' role='alert'>{{ $message }}</div>
+    @endforeach
 
 	{{ Form::open(array('action'=>'HomeController@doRegister')) }}
 

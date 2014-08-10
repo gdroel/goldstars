@@ -22,14 +22,15 @@
 			<h4>3. Beat your Friends.</h4>
 		</div>
 		<div class="col-md-4 info">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<p>eyyy</p>
-				</div>
-				<div class="panel-body">
-					<p>Gabe</p>
-				</div>
-			</div>
+			<h3>Recent Users</h3>
+			<hr>
+			@if($users!="")
+			@foreach($users as $user)
+			<h4><a class="black" href="{{ action('HomeController@show') }}">{{ $user->name }}</a></h4>
+			@endforeach
+			@endif
+	
+
 		</div>
 	</div>
 </div><!--Container-->

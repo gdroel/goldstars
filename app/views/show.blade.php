@@ -67,7 +67,7 @@ $(document).ready(function(){
 
 		$("#addform").show();
 	});
- 
+
 });
 	
 

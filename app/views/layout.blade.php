@@ -38,7 +38,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav pull-right">
         @if(Auth::check())
-        <li><a class="btn btn-info" href="{{ action('HomeController@show', Auth::user()->id) }}">Students</a></li>
+        <li><a class="btn btn-info" href="{{ action('HomeController@show', Auth::user()->id) }}">My Students</a></li>
         <li><a href="{{ action('HomeController@doLogout') }}">Logout</a></li>
         @else
         <li><a class="btn btn-info" href="{{ action('HomeController@showRegister') }}">I'm a Leader</a></li>
