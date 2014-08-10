@@ -26,7 +26,7 @@
 			<hr>
 			@if($users!="")
 			@foreach($users as $user)
-			<h4><a class="black" href="{{ action('HomeController@show') }}">{{ $user->name }}</a></h4>
+			<h4><a class="black" href="{{ action('HomeController@show',$user->id) }}">{{ $user->name }}</a></h4>
 			@endforeach
 			@endif
 	

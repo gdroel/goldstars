@@ -56,7 +56,7 @@ class HomeController extends BaseController {
 			Student::addStar($id);
 
 		}
-		return Response::json(compact($user_id));
+		return Redirect::back();
 		
 	}
 
