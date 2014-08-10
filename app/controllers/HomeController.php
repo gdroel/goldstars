@@ -37,7 +37,7 @@ class HomeController extends BaseController {
 		$student->stars=0;
 
 		$student->save();
-
+		
 		return Redirect::back();
 	}
 
@@ -61,6 +61,7 @@ class HomeController extends BaseController {
 			echo 'u cant do dat.';
 		}
 		return Redirect::back();
+
 	}
 
 	public function showRegister(){
@@ -113,7 +114,7 @@ class HomeController extends BaseController {
 
 			if (Auth::attempt($userdata)) {
 
-				return Redirect::back();
+				return Redirect::action('HomeController@show',Auth::user()->id);
 
 			} else {	 	
 

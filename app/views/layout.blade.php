@@ -18,6 +18,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../js/ajax.js"></script>
   </head>
   <body>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -30,7 +31,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Gold Stars!</a>
+      <a class="navbar-brand" href="{{ action('HomeController@index') }}">Stars</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -39,19 +40,18 @@
         @if(Auth::check())
         <li><a class="btn btn-info" href="{{ action('HomeController@show', Auth::user()->id) }}">Students</a></li>
         <li><a href="{{ action('HomeController@doLogout') }}">Logout</a></li>
-        <li><a href="{{ action('HomeController@showCreate') }}">+</a></li>
         @else
         <li><a class="btn btn-info" href="{{ action('HomeController@showRegister') }}">I'm a Leader</a></li>
         <li><a href="{{ action('HomeController@showLogin') }}">Login</a></li>
         @endif
+        <li><a class="pull-right" id="searchbutton"><span class="glyphicon glyphicon-search"></span></a></li>
+        {{ Form::open(array('action'=>'HomeController@doSearch','class'=>'navbar-form navbar-right','id'=>'search'))}}
+        <div class="form-group">
+        {{ Form::text('query', null, array('class'=>'form-control', 'placeholder'=>'Search Students'))}}
+        </div>
+       {{ Form::close() }}
       </ul>
 
-      {{ Form::open(array('action'=>'HomeController@doSearch','class'=>'navbar-form navbar-left'))}}
-        <div class="form-group">
-          {{ Form::text('query', null, array('class'=>'form-control', 'placeholder'=>'Search Students'))}}
-        </div>
-      {{ Form::submit('Search', array('class'=>"btn btn-default")) }}
-      {{ Form::close() }}
 
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -60,7 +60,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <div class="col-md-12" id="footer">
-      <p><a class="white" href="http://gaberoeloffs.com">&copy 2014 Gabe Roeloffs</a></p>
+      <p><a class="white" href="http://gaberoeloffs.com">&copy 2014 Gabe Roeloffs</a><a class="pull-right white" href="http://github.com/gdroel/goldstars">Fork this on Github</a></p>
     </div>
+  <script>
+$(document).ready(function(){
+
+  $("#search").hide();
+  $('#searchbutton').click(function(){
+
+    $("#search").show();
+
+  });
+});
+  </script>
   </body>
 </html>

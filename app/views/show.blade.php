@@ -38,16 +38,16 @@
 
 
 	@for ($i = 0; $i < $stars; $i++)
-	<span class = "glyphicon glyphicon-star" id="star"></span>
+	<a id="update" href="#"><span class = "glyphicon glyphicon-star star" id="star"></span></a>
 	@endfor
 	</td>
 	<td>
 		@if(Auth::check())
 			@if(Auth::user()->id==$student->user_id)
 
-			{{ Form::open(array('action'=>'HomeController@addStar'))}}
-			{{ Form::hidden('id', $student->id) }}
-			{{ Form::hidden('user_id', $student->user_id)}}
+			{{ Form::open(array('action'=>'HomeController@addStar','id'=>'addStar','method'=>'post'))}}
+			{{ Form::hidden('id', $student->id, array('id'=>'id_value')) }}
+			{{ Form::hidden('user_id', $student->user_id, array('id'=>'user_id_value'))}}
 			{{ Form::submit('+')}}
 			{{ Form::close() }}
 
@@ -67,7 +67,11 @@ $(document).ready(function(){
 
 		$("#addform").show();
 	});
-	
+ 
 });
+	
+
+
+
 </script>
 @stop

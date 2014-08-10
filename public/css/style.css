@@ -81,6 +81,13 @@ h3{
 	font-family: 'Raleway';
 }
 
+.rotate {
+    transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+}
+
 h4{
 
 	font-family: 'Raleway';
@@ -100,4 +107,17 @@ h4{
 	margin-top: 100px;
 	background-color: gray;
 	padding: 15px;
+	margin-bottom: 0px;
 }
+
+
+.star {
+    -webkit-animation:spin 15s linear infinite;
+    -moz-animation:spin 15s linear infinite;
+    animation:spin 15s linear infinite;
+	font-size: 30px;
+	color: yellow;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
