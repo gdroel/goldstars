@@ -15,7 +15,7 @@ Then, using Composer, install the dependencies. (aka, the vendor folder)
 
 **if you have installed composer, run this command:**
 
-    cd laravel
+    cd goldstars
     composer install --dev
     
 ##Configure Databases
