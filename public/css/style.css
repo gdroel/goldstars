@@ -9,6 +9,7 @@
 	max-width: 80px;
 	padding: 0px;
 	margin-top: -28px;
+	margin-left: -25px;
 }
 
 #bg1{
@@ -153,3 +154,19 @@ a.btn-info:hover{
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+::-webkit-input-placeholder {
+   font-family: 'Raleway'
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   font-family: 'Raleway'
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   font-family: 'Raleway' 
+}
+
+:-ms-input-placeholder {  
+   font-family: 'Raleway'
+}

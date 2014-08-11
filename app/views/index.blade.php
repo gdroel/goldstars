@@ -2,9 +2,9 @@
 @section('content')
 <div id="bg1">
 	<div class="jumbotron text-center">
-		<h1 class="centered movedownmore">All that Glitters is Gold.</h1>
+		<h1 class="centered movedown">All that Glitters is Gold.</h1>
 		<p class="centered">Gold Stars for the Modern Age.</p>
-		<a class="btn btn-info">Sign Up as a Leader</a>
+		<a class="btn btn-info" href="{{ action('HomeController@showRegister') }}">Sign Up as a Leader</a>
 	</div>
 </div>
 <div class="container">
@@ -17,7 +17,7 @@
 			<h4>3. Lavish them with Gold Stars.</h4>
 		</div>
 		<div class="col-sm-4 info">
-			<h3>Students:</h3>
+			<h3>For Students:</h3>
 			<hr>
 			<h4>1. Search your Name.</h4>
 			<h4>2. Get your Stars.</h4>
