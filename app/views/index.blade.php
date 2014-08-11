@@ -1,8 +1,10 @@
 @extends('layout')
 @section('content')
 <div id="bg1">
-	<div class="jumbotron">
+	<div class="jumbotron text-center">
 		<h1 class="centered movedownmore">All that Glitters is Gold.</h1>
+		<p class="centered">Gold Stars for the Modern Age.</p>
+		<a class="btn btn-info">Sign Up as a Leader</a>
 	</div>
 </div>
 <div class="container">

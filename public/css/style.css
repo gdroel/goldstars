@@ -4,6 +4,13 @@
 	color: yellow;
 }
 
+#brand{
+
+	max-width: 80px;
+	padding: 0px;
+	margin-top: -28px;
+}
+
 #bg1{
 
 	/*background-image: url('../images/starblur.png');*/
@@ -105,6 +112,18 @@ h4{
 .navbar-fixed-top .btn-info{
 	background: none;
 	border: 1px solid yellow;
+}
+
+.btn-info{
+	background: none;
+	border: 1px solid yellow;
+	margin: 0 auto;
+}
+
+a.btn-info:hover{
+
+	background-color: yellow;
+	color:black;
 }
 
 .white{

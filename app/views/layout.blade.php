@@ -31,7 +31,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{ action('HomeController@index') }}">Gold Stars</a>
+      <a class="navbar-brand" href="{{ action('HomeController@index') }}"><img src="../images/staryellow.png" id="brand"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
