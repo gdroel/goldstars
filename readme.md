@@ -7,13 +7,13 @@ To download the repo, `cd ` into the directory where you want the project to exi
 
 Then, using Composer, install the dependencies. (aka, the vendor folder)
 
-If you haven't installed composer, run this command:
+**If you haven't installed composer, run this command:**
 
     cd goldstars
     curl -s http://getcomposer.org/installer | php
     php composer.phar install --dev
 
-if you have installed composer, run this command:
+**if you have installed composer, run this command:**
 
     cd laravel
     composer install --dev
